@@ -836,14 +836,16 @@
       });
     }
 
-    // Meme sticker interactions
-    document.querySelectorAll('.meme-sticker').forEach(sticker => {
-      sticker.addEventListener('click', () => {
-        const emoji = sticker.querySelector('.emoji').textContent;
-        alert(`Tu as invoqué ${sticker.textContent.trim()} ! ${emoji}`);
-      });
+   // Meme sticker interactions 
+<script>
+  document.querySelectorAll('.meme-sticker').forEach(sticker => {
+    sticker.addEventListener('click', () => {
+      const emoji = sticker.querySelector('.emoji').textContent;
+      // Redirection vers Twitter au lieu d'une alerte
+      window.location.href = "https://twitter.com/CrackDivina";
     });
-  </script>
+  });
+</script>
 </body>
 </html>
 
