@@ -988,7 +988,7 @@
       setInterval(updateCountdown, 1000);
     }
 
-    // Launch countdown timer (for countdown page)
+    // Fetch launch time from backend and update countdown
     const launchTimerElements = {
       days: document.getElementById('days'),
       hours: document.getElementById('hours'),
@@ -996,54 +996,106 @@
       seconds: document.getElementById('seconds')
     };
 
-    // Set launch date to 24 hours from now (you can change this)
-    const launchDate = new Date();
-    launchDate.setHours(launchDate.getHours() + 24);
-
-    const updateLaunchCountdown = () => {
-      const now = new Date();
-      const diff = launchDate - now;
-      
-      if (diff <= 0) {
-        // Launch has started
-        Object.values(launchTimerElements).forEach(el => {
-          if (el) el.textContent = '00';
-        });
-        return;
+    async function initCountdown() {
+      try {
+        const response = await fetch('http://localhost:3000/api/launch-time');
+        const { launchTime } = await response.json();
+        const launchDate = new Date(launchTime);
+        
+        // Update countdown with actual launch time from backend
+        const updateLaunchCountdown = () => {
+          const now = new Date();
+          const diff = launchDate - now;
+          
+          if (diff <= 0) {
+            Object.values(launchTimerElements).forEach(el => {
+              if (el) el.textContent = '00';
+            });
+            return;
+          }
+          
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+          
+          if (launchTimerElements.days) launchTimerElements.days.textContent = days.toString().padStart(2, '0');
+          if (launchTimerElements.hours) launchTimerElements.hours.textContent = hours.toString().padStart(2, '0');
+          if (launchTimerElements.minutes) launchTimerElements.minutes.textContent = minutes.toString().padStart(2, '0');
+          if (launchTimerElements.seconds) launchTimerElements.seconds.textContent = seconds.toString().padStart(2, '0');
+        };
+        
+        updateLaunchCountdown();
+        setInterval(updateLaunchCountdown, 1000);
+      } catch (error) {
+        console.error("Failed to get launch time", error);
+        // Fallback to hardcoded 24 hours if backend fails
+        const fallbackLaunchDate = new Date();
+        fallbackLaunchDate.setHours(fallbackLaunchDate.getHours() + 24);
+        
+        const updateFallbackCountdown = () => {
+          const now = new Date();
+          const diff = fallbackLaunchDate - now;
+          
+          if (diff <= 0) {
+            Object.values(launchTimerElements).forEach(el => {
+              if (el) el.textContent = '00';
+            });
+            return;
+          }
+          
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+          
+          if (launchTimerElements.days) launchTimerElements.days.textContent = days.toString().padStart(2, '0');
+          if (launchTimerElements.hours) launchTimerElements.hours.textContent = hours.toString().padStart(2, '0');
+          if (launchTimerElements.minutes) launchTimerElements.minutes.textContent = minutes.toString().padStart(2, '0');
+          if (launchTimerElements.seconds) launchTimerElements.seconds.textContent = seconds.toString().padStart(2, '0');
+        };
+        
+        updateFallbackCountdown();
+        setInterval(updateFallbackCountdown, 1000);
       }
-      
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-      
-      if (launchTimerElements.days) launchTimerElements.days.textContent = days.toString().padStart(2, '0');
-      if (launchTimerElements.hours) launchTimerElements.hours.textContent = hours.toString().padStart(2, '0');
-      if (launchTimerElements.minutes) launchTimerElements.minutes.textContent = minutes.toString().padStart(2, '0');
-      if (launchTimerElements.seconds) launchTimerElements.seconds.textContent = seconds.toString().padStart(2, '0');
-    };
-
-    // Initialize and update countdown
-    if (Object.values(launchTimerElements).some(el => el !== null)) {
-      updateLaunchCountdown();
-      setInterval(updateLaunchCountdown, 1000);
     }
+    
+    initCountdown();
 
-    // Sigil form handling
+    // Sigil form handling with backend integration
     const invokeBtn = document.getElementById('invokeBtn');
     const mantraInput = document.getElementById('mantraInput');
     const invocationMsg = document.getElementById('invocationMsg');
     
     if (invokeBtn) {
-      invokeBtn.addEventListener('click', () => {
+      invokeBtn.addEventListener('click', async () => {
         const mantra = mantraInput.value.trim();
         if (!mantra) {
           invocationMsg.textContent = "Le mantra ne peut pas être vide !";
           invocationMsg.style.color = "#ff3ec8";
           return;
         }
-        invocationMsg.textContent = "✨ Sigil invoqué ! Check ton wallet...";
-        invocationMsg.style.color = "#ffd166";
+
+        try {
+          const response = await fetch('http://localhost:3000/api/invoke-sigil', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ mantra })
+          });
+          
+          const result = await response.json();
+          if (result.success) {
+            invocationMsg.textContent = "✨ Sigil invoqué ! Vérifie ton portefeuille...";
+            invocationMsg.style.color = "#ffd166";
+          } else {
+            invocationMsg.textContent = "❌ Échec de l'invocation";
+            invocationMsg.style.color = "#ff3ec8";
+          }
+        } catch (error) {
+          invocationMsg.textContent = "❌ Erreur réseau";
+          invocationMsg.style.color = "#ff3ec8";
+        }
+        
         mantraInput.value = '';
       });
     }
@@ -1081,29 +1133,28 @@
             const resp = await window.solana.connect();
             const walletAddress = resp.publicKey.toString();
 
-            // Envoie l'adresse au serveur
-            const response = await fetch("http://localhost:3000/api/save-wallet", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
+            // Send to backend
+            const response = await fetch('http://localhost:3000/api/save-wallet', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ address: walletAddress })
             });
 
-            if (response.ok) {
-              walletStatus.textContent = `✅ Wallet connecté ! Adresse: ${walletAddress.substring(0, 6)}...${walletAddress.substring(walletAddress.length - 4)}`;
+            const result = await response.json();
+            if (result.success) {
+              walletStatus.textContent = `✅ Portefeuille connecté ! Adresse: ${walletAddress.substring(0,6)}...${walletAddress.substring(walletAddress.length-4)}`;
               walletStatus.className = "success";
-              console.log("Adresse Solana envoyée au serveur:", walletAddress);
             } else {
-              walletStatus.textContent = "❌ Erreur serveur lors de l'enregistrement";
+              walletStatus.textContent = "❌ Erreur serveur";
               walletStatus.className = "error";
             }
-
           } catch (err) {
-            console.error("Erreur de connexion au wallet:", err);
+            console.error("Erreur:", err);
             walletStatus.textContent = `❌ Erreur: ${err.message || "Connexion annulée"}`;
             walletStatus.className = "error";
           }
         } else {
-          walletStatus.textContent = "❌ Phantom Wallet n'est pas installé. Installe-le depuis https://phantom.app/";
+          walletStatus.textContent = "❌ Phantom Wallet non installé";
           walletStatus.className = "error";
           walletStatus.style.display = "block";
         }
@@ -1113,6 +1164,3 @@
 </body>
 </html>
 
-
-
-            
