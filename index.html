@@ -117,27 +117,20 @@
       display: flex; align-items: center; gap: 12px;
       text-shadow: var(--glow);
     }
-    .logo-container {
-      width: 48px;
-      height: 48px;
-      position: relative;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(255,209,102,.6), 0 0 40px rgba(255,62,200,.3);
-    }
     .logo{
+      width: 48px; 
+      height: 48px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255,209,102,.6), 0 0 40px rgba(255,62,200,.3);
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+    }
+    .logo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-    }
-    .pulse {
-      animation: pulse 2.6s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-      100% { transform: scale(1); }
+      border-radius: 50%;
     }
     .brand h1{
       font-family: "Bangers", cursive;
@@ -145,6 +138,22 @@
     }
     .cta-bar{
       display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover, .nav-link.active {
+      background: rgba(155,52,239,0.2);
+      box-shadow: 0 0 10px rgba(155,52,239,0.5);
     }
 
     /* Buttons */
@@ -174,6 +183,15 @@
       transform: translateY(-2px) scale(1.02);
       filter: brightness(1.08);
     }
+    .btn-sigil {
+      background: linear-gradient(135deg, var(--blue), var(--violet));
+      box-shadow: 0 0 25px rgba(58,214,255,.5);
+    }
+    .btn-sigil:hover {
+      transform: translateY(-2px) scale(1.02);
+      filter: brightness(1.08);
+      box-shadow: 0 0 35px rgba(58,214,255,.7);
+    }
 
     /* Hero */
     .hero{
@@ -195,6 +213,26 @@
       margin: 6px auto 22px;
       max-width: 800px;
     }
+    .hero .badge-row{
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      flex-wrap: wrap; margin: 24px 0;
+    }
+    .meme-sticker{
+      border: 2px dashed rgba(255,255,255,.18);
+      border-radius: 14px;
+      padding: 10px 14px;
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 20px rgba(58,214,255,.25);
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 700;
+    }
+    .meme-sticker .emoji{ font-size: 1.6rem }
+
+    .hero-cta{
+      display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
+      margin-top: 10px;
+    }
 
     /* Sections */
     section{
@@ -207,6 +245,88 @@
       margin: 0 0 16px;
       text-shadow: var(--glow);
     }
+    .grid{
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .col-12{ grid-column: span 12 }
+    .col-6{ grid-column: span 6 }
+    .col-4{ grid-column: span 4 }
+    .card{
+      background: rgba(255,255,255,.05);
+      border: 1px dashed rgba(255,255,255,.15);
+      border-radius: 16px;
+      padding: 18px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 30px rgba(155,52,239,.18);
+    }
+    .card h3{
+      font-family: "Bangers", cursive;
+      margin: 0 0 10px; font-size: 1.3rem;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255,209,102,.4);
+    }
+    .card p{ margin: 8px 0; color: var(--muted) }
+
+    .tokenomics{
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .tokenomic-item{
+      text-align: center;
+      padding: 18px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.04);
+      border: 1px dashed rgba(255,255,255,.16);
+    }
+    .tokenomic-item .label{
+      font-family: "Bangers", cursive;
+      color: var(--pink);
+      font-size: 1.1rem;
+    }
+    .tokenomic-item .value{
+      font-size: 1.6rem; margin-top: 6px;
+      text-shadow: 0 0 14px rgba(255,62,200,.35);
+    }
+
+    .community-links{
+      display: flex; gap: 12px; flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .social{
+      padding: 10px 14px; border-radius: 999px;
+      border: 2px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      font-weight: 700;
+      box-shadow: 0 0 18px rgba(58,214,255,.25);
+    }
+
+    .roadmap{
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .phase{
+      padding: 18px;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(155,52,239,.15), rgba(255,62,200,.12));
+      border: 1px dashed rgba(255,255,255,.18);
+      box-shadow: 0 0 22px rgba(155,52,239,.18);
+    }
+    .phase h4{
+      margin: 0 0 10px; font-size: 1.2rem; color: var(--blue);
+      font-family: "Bangers", cursive;
+      text-shadow: 0 0 12px rgba(58,214,255,.35);
+    }
+    .phase p{ color: var(--muted) }
+
+    /* Neon glow utility */
+    .glow{
+      text-shadow:
+        0 0 8px rgba(155,52,239,.6),
+        0 0 16px rgba(255,62,200,.35),
+        0 0 34px rgba(58,214,255,.25);
+    }
 
     /* Footer */
     footer{
@@ -216,16 +336,67 @@
       border-top: 1px dashed rgba(255,255,255,.12);
     }
 
-    /* Page sections */
-    .page-section {
-      min-height: 100vh;
-      display: none;
+    /* Responsive */
+    @media (max-width: 980px){
+      .tokenomics{ grid-template-columns: 1fr 1fr; }
+      .roadmap{ grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
     }
-    .page-section.active {
-      display: block;
+    @media (max-width: 640px){
+      .tokenomics{ grid-template-columns: 1fr; }
+      .roadmap{ grid-template-columns: 1fr; }
+      .cta-bar .btn{ padding: 10px 14px }
     }
 
-    /* Reduced motion toggle */
+    /* Fun animations */
+    @keyframes floaty {
+      0% { transform: translateY(0) rotate(0deg) }
+      50% { transform: translateY(-6px) rotate(2deg) }
+      100% { transform: translateY(0) rotate(0deg) }
+    }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 14px rgba(155,52,239,.5) }
+      50% { box-shadow: 0 0 30px rgba(255,62,200,.6) }
+      100% { box-shadow: 0 0 14px rgba(155,52,239,.5) }
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-12px);}
+      60% {transform: translateY(-6px);}
+    }
+    .floaty{ animation: floaty 3.5s ease-in-out infinite }
+    .pulse{ animation: pulseGlow 2.6s ease-in-out infinite }
+
+    /* Scroll reveals */
+    .reveal{
+      opacity: 0; transform: translateY(12px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible{
+      opacity: 1; transform: translateY(0);
+    }
+
+    /* Meme GIF container */
+    .meme-gif {
+      max-height: 120px;
+      border-radius: 10px;
+      margin-top: 8px;
+      border: 2px solid rgba(255,62,200,0.3);
+      box-shadow: 0 0 15px rgba(255,62,200,0.2);
+    }
+
+    /* Particle effect container */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Accessibility: Reduced motion toggle */
     .reduced-motion-toggle {
       position: fixed;
       bottom: 20px;
@@ -252,13 +423,301 @@
       background: rgba(255,62,200,0.2);
     }
 
-    /* Responsive */
-    @media (max-width: 640px){
-      .cta-bar .btn{ padding: 10px 14px }
+    /* Schema.org structured data container */
+    .schema-data {
+      display: none;
+    }
+
+    /* Page sections */
+    .page-section {
+      min-height: 100vh;
+      display: none;
+      animation: fadeIn 0.5s ease forwards;
+    }
+    .page-section.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sigil page specific styles */
+    #sigil-page {
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(155,52,239,0.15), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255,62,200,0.12), transparent 45%),
+        radial-gradient(circle at center, var(--bg), #000);
+    }
+    #sigil-page .sigil-container {
+      position: relative;
+      display: inline-block;
+      margin: 40px auto;
+    }
+    #sigil-page .sigil {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg, var(--pink), var(--violet), var(--blue));
+      box-shadow: 
+        0 0 20px rgba(255,62,200,0.4),
+        0 0 40px rgba(155,52,239,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    #sigil-page .sigil::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      background: #000;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid var(--gold);
+    }
+    #sigil-page .sigil::after {
+      content: "🧿";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.2);
+      font-size: 32px;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255,209,102,0.8);
+    }
+    #sigil-page .countdown {
+      font-family: 'Chakra Petch', monospace;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      margin: 30px 0;
+      color: var(--gold);
+      text-shadow: 0 0 15px rgba(255,209,102,0.6);
+      font-weight: 700;
+    }
+    #sigil-page .form {
+      margin: 40px auto;
+      max-width: 420px;
+      background: rgba(255,255,255,0.05);
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 
+        0 0 20px rgba(155,52,239,0.3),
+        inset 0 0 10px rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    #sigil-page .form h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255,209,102,0.4);
+    }
+    #sigil-page .form p {
+      margin-bottom: 20px;
+      color: var(--muted);
+    }
+    #sigil-page .form input {
+      width: 100%;
+      padding: 14px 18px;
+      margin: 12px 0;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      font-size: 1.1rem;
+      background: rgba(0,0,0,0.3);
+      color: var(--text);
+      font-family: 'Chakra Petch', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+    #sigil-page .form input:focus {
+      outline: none;
+      border-color: var(--pink);
+      box-shadow: 0 0 15px rgba(255,62,200,0.3);
+    }
+    #sigil-page .form button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--violet), var(--pink));
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-family: 'Chakra Petch', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(155,52,239,0.3);
+    }
+    #sigil-page .form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,62,200,0.4);
+    }
+    #sigil-page .form button:active {
+      transform: translateY(1px);
+    }
+    #sigil-page #invocationMsg {
+      margin-top: 12px;
+      min-height: 24px;
+      font-weight: 700;
+    }
+    #sigil-page .glyph {
+      position: fixed;
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      opacity: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+    #sigil-page footer {
+      margin-top: 60px;
+    }
+
+    /* Wallet button styles */
+    #connect-wallet {
+      font-family: "Bangers", cursive;
+      font-size: 1.1rem;
+      padding: 14px 24px;
+      border: 2px solid rgba(255,255,255,.2);
+      border-radius: 999px;
+      background: linear-gradient(135deg, #00ff88, #00cc66);
+      color: #000;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+      margin: 20px 0;
+    }
+    #connect-wallet:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+      filter: brightness(1.1);
+    }
+    #connect-wallet:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+    }
+
+    /* Wallet status display */
+    #wallet-status {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      font-family: 'Chakra Petch', monospace;
+      font-size: 0.95rem;
+      display: none;
+    }
+    #wallet-status.success {
+      border-color: #00ff88;
+      color: #00ff88;
+      display: block;
+    }
+    #wallet-status.error {
+      border-color: #ff3ec8;
+      color: #ff3ec8;
+      display: block;
+    }
+
+    /* Countdown page styles */
+    #countdown-page {
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(155,52,239,0.15), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255,62,200,0.12), transparent 45%),
+        radial-gradient(circle at center, var(--bg), #000);
+    }
+    #countdown-page .countdown-container {
+      text-align: center;
+      padding: 80px 20px;
+    }
+    #countdown-page .countdown-title {
+      font-family: "Bangers", cursive;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      margin: 0 0 20px;
+      color: var(--gold);
+      text-shadow: 0 0 15px rgba(255,209,102,0.6);
+    }
+    #countdown-page .countdown-subtitle {
+      color: var(--muted);
+      font-size: clamp(1.1rem, 2.8vw, 1.3rem);
+      margin: 0 0 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #countdown-page .launch-timer {
+      font-family: 'Chakra Petch', monospace;
+      font-size: clamp(2.5rem, 7vw, 4rem);
+      color: var(--pink);
+      text-shadow: 0 0 20px rgba(255,62,200,0.5);
+      margin: 30px 0;
+      font-weight: 700;
+    }
+    #countdown-page .timer-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    #countdown-page .timer-box {
+      background: rgba(255,255,255,0.08);
+      border: 2px solid rgba(255,62,200,0.3);
+      border-radius: 12px;
+      padding: 20px 15px;
+      min-width: 80px;
+      box-shadow: 0 0 15px rgba(255,62,200,0.2);
+    }
+    #countdown-page .timer-value {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255,209,102,0.6);
+    }
+    #countdown-page .timer-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    #countdown-page .launch-info {
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 25px;
+      max-width: 600px;
+      margin: 40px auto;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    #countdown-page .launch-info h3 {
+      font-family: "Bangers", cursive;
+      color: var(--gold);
+      margin: 0 0 15px;
+      font-size: 1.5rem;
+    }
+    #countdown-page .launch-info p {
+      color: var(--muted);
+      margin: 8px 0;
     }
   </style>
 </head>
 <body>
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json" class="schema-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DivinaCrack",
+    "url": "https://divinacrack.fun",
+    "description": "Token crypto ésotérique & déjanté. Meme degens + occult vibes. Join the cult or stay mortal.",
+    "creator": {
+      "@type": "Organization",
+      "name": "DivinaCrack Cult"
+    }
+  }
+  </script>
+
   <div class="occult-bg">
     <div class="rune">ᚠ</div>
     <div class="rune">ᚢ</div>
@@ -270,118 +729,390 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <div class="logo-container">
-          <img class="logo pulse" src="https://raw.githubusercontent.com/divin800/divinacrack-site/main/ChatGPT%20Image%2020%20nov.%202025%2C%2017_46_44.png" alt="DivinaCrack Logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"48\" height=\"48\" viewBox=\"0 0 48 48\"><circle cx=\"24\" cy=\"24\" r=\"20\" fill=\"%239b34ef\"/><path d=\"M24 10a14 14 0 0 1 14 14 14 14 0 0 1-14 14 14 14 0 0 1-14-14 14 14 0 0 1 14-14zm0 4a10 10 0 0 0-10 10 10 10 0 0 0 10 10 10 10 0 0 0 10-10 10 10 0 0 0-10-10z\" fill=\"%23ff3ec8\"/></svg>';">
+        <div class="logo pulse" aria-hidden="true">
+          <img src="https://raw.githubusercontent.com/divin800/divinacrack-site/main/ChatGPT%20Image%2020%20nov.%202025%2C%2017_46_44.png" alt="DivinaCrack Logo" loading="lazy">
         </div>
-        <h1>#DivinaCrack</h1>
+        <h1 aria-label="Divina Crack">#DivinaCrack</h1>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-link active" data-page="main">Home</a>
+        <a href="#" class="nav-link" data-page="countdown">Countdown</a>
+        <a href="#" class="nav-link" data-page="sigil">Le Sigil</a>
       </div>
       <div class="cta-bar">
-        <button class="btn btn-buy btn-big">BUY NOW 🚀</button>
-        <button class="btn btn-cult btn-big">JOIN CULT 😈</button>
+        <a class="btn btn-buy btn-big" href="javascript:void(0)" data-page="countdown" aria-label="Acheter DivinaCrack maintenant">BUY NOW 🚀</a>
+        <a class="btn btn-cult btn-big" href="https://x.com/CrackDivina" target="_blank" rel="noopener" aria-label="Rejoindre le culte DivinaCrack sur Twitter">JOIN CULT 😈</a>
+        <a class="btn btn-sigil btn-big" href="javascript:void(0)" data-page="sigil" aria-label="Voir le Sigil mystique">SIGIL 🔮</a>
       </div>
     </div>
   </header>
 
+  <canvas id="particles" aria-hidden="true"></canvas>
+
   <!-- Main Page -->
   <main class="page-section active" id="main-page">
-    <section class="hero">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
       <div class="container">
-        <h1 class="title glow">Crack the Code, Pump the Universe 🚀🌌</h1>
-        <p class="subtitle">Ceux qui l'entendent ne cherchent plus la lumière… ils cherchent du <strong>1000x</strong>. 💸✨</p>
+        <h1 id="hero-title" class="title glow">Crack the Code, Pump the Universe 🚀🌌</h1>
+        <p class="subtitle">Ceux qui l’entendent ne cherchent plus la lumière… ils cherchent du <strong>1000x</strong>. 💸✨ WAGMI • LFG • Degen mode ON.</p>
+
+        <div class="badge-row" role="group" aria-label="Personnages mèmes">
+          <div class="meme-sticker floaty" role="button" tabindex="0">
+            <span class="emoji" aria-hidden="true">🐸</span> Grenouille oracle
+          </div>
+          <div class="meme-sticker floaty" role="button" tabindex="0">
+            <span class="emoji" aria-hidden="true">😼</span> Chat mage
+          </div>
+          <div class="meme-sticker floaty" role="button" tabindex="0">
+            <span class="emoji" aria-hidden="true">🧿</span> Illuminati avec lunettes pixel
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a class="btn btn-buy btn-big" href="javascript:void(0)" data-page="countdown" aria-label="Acheter DivinaCrack maintenant">BUY NOW 🚀</a>
+          <a class="btn btn-cult btn-big" href="https://x.com/CrackDivina" target="_blank" rel="noopener" aria-label="Rejoindre le culte DivinaCrack sur Twitter">JOIN CULT 🔮🤣</a>
+          <button id="connect-wallet">Connecter mon wallet Solana</button>
+          <div id="wallet-status"></div>
+          <a class="btn btn-sigil btn-big" href="javascript:void(0)" data-page="sigil" aria-label="Voir le Sigil mystique">SIGIL 🔮</a>
+        </div>
       </div>
     </section>
 
-    <section>
+    <!-- TOKENOMICS -->
+    <section aria-labelledby="tokenomics-title">
       <div class="container">
-        <h2 class="section-title">What the hell is DivinaCrack? 🤣😈</h2>
-        <p style="text-align: center; color: var(--muted); font-size: 1.1rem;">
-          DivinaCrack est un token crypto ésotérique et déjanté. Des symboles occultes parodiés, des runes cartoon, un œil illuminati qui rigole — bref, le culte le plus absurde de la chaîne. LFG! 🚀🔥
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2 class="section-title">Tokenomics mème 💸✨</h2>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;">
-          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; text-align: center; min-width: 200px;">
-            <div style="font-family: 'Bangers', cursive; color: var(--pink); font-size: 1.2rem;">Supply</div>
-            <div style="font-size: 1.8rem; margin-top: 10px; text-shadow: 0 0 14px rgba(255,62,200,.35);">∞? maybe</div>
+        <h2 id="tokenomics-title" class="section-title glow">Tokenomics Occultes 📊</h2>
+        <div class="tokenomics">
+          <div class="tokenomic-item">
+            <div class="label">Supply Total</div>
+            <div class="value">666,666,666</div>
           </div>
-          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; text-align: center; min-width: 200px;">
-            <div style="font-family: 'Bangers', cursive; color: var(--pink); font-size: 1.2rem;">Taxes</div>
-            <div style="font-size: 1.8rem; margin-top: 10px; text-shadow: 0 0 14px rgba(255,62,200,.35);">lol</div>
+          <div class="tokenomic-item">
+            <div class="label">Burn Initial</div>
+            <div class="value">66%</div>
           </div>
-          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; text-align: center; min-width: 200px;">
-            <div style="font-family: 'Bangers', cursive; color: var(--pink); font-size: 1.2rem;">Utilities</div>
-            <div style="font-size: 1.8rem; margin-top: 10px; text-shadow: 0 0 14px rgba(255,62,200,.35);">rituels, pump</div>
+          <div class="tokenomic-item">
+            <div class="label">Liquidity</div>
+            <div class="value">Locked 🔒</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- ROADMAP -->
+    <section aria-labelledby="roadmap-title">
       <div class="container">
-        <h2 class="section-title">Roadmap mème mystique 🗺️🔮</h2>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;">
-          <div style="background: linear-gradient(135deg, rgba(155,52,239,.15), rgba(255,62,200,.12)); border-radius: 14px; padding: 20px; min-width: 200px; text-align: center;">
-            <h3 style="color: var(--blue); font-family: 'Bangers', cursive;">Phase 1 : Invocation 😈</h3>
-            <p>Rituels de lancement • Création du culte</p>
+        <h2 id="roadmap-title" class="section-title glow">Roadmap Ésotérique 🔮</h2>
+        <div class="roadmap">
+          <div class="phase">
+            <h4>Phase I: L'Appel</h4>
+            <p>Lancement du token, création du culte, premiers degens initiés.</p>
           </div>
-          <div style="background: linear-gradient(135deg, rgba(155,52,239,.15), rgba(255,62,200,.12)); border-radius: 14px; padding: 20px; min-width: 200px; text-align: center;">
-            <h3 style="color: var(--blue); font-family: 'Bangers', cursive;">Phase 2 : Pump 🚀</h3>
-            <p>100x • 1000x • Moon mission</p>
+          <div class="phase">
+            <h4>Phase II: La Vision</h4>
+            <p>NFT mystiques, rituels communautaires, partenariats avec d'autres cultes.</p>
           </div>
-          <div style="background: linear-gradient(135deg, rgba(155,52,239,.15), rgba(255,62,200,.12)); border-radius: 14px; padding: 20px; min-width: 200px; text-align: center;">
-            <h3 style="color: var(--blue); font-family: 'Bangers', cursive;">Phase 4 : Lambo sur la lune 🌕🚗</h3>
-            <p>Full Lambo fleet • Moon base</p>
+          <div class="phase">
+            <h4>Phase III: L'Ascension</h4>
+            <p>Intégration cross-chain, oracle divin, 1000x ou rien.</p>
+          </div>
+          <div class="phase">
+            <h4>Phase IV: L'Éveil</h4>
+            <p>DivinaCrack devient religion officielle de la Terre. WAGMI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section aria-labelledby="community-title">
+      <div class="container">
+        <h2 id="community-title" class="section-title glow">Rejoins le Culte 👁️</h2>
+        <div class="card">
+          <h3>Twitter Officiel</h3>
+          <p>Rejoins notre communauté sur Twitter pour les dernières updates et rituels dégénérés.</p>
+          <div class="community-links">
+            <a href="https://x.com/CrackDivina" target="_blank" rel="noopener" class="social">𝕏 @CrackDivina</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Countdown Page -->
+  <main class="page-section" id="countdown-page">
+    <div class="countdown-container">
+      <h1 class="countdown-title glow">🚀 Lancement Imminent 🔥</h1>
+      <p class="countdown-subtitle">Le token DivinaCrack sera disponible sur Pump.fun dans :</p>
+      
+      <div class="timer-boxes">
+        <div class="timer-box">
+          <div class="timer-value" id="days">00</div>
+          <div class="timer-label">JOURS</div>
+        </div>
+        <div class="timer-box">
+          <div class="timer-value" id="hours">00</div>
+          <div class="timer-label">HEURES</div>
+        </div>
+        <div class="timer-box">
+          <div class="timer-value" id="minutes">00</div>
+          <div class="timer-label">MINUTES</div>
+        </div>
+        <div class="timer-box">
+          <div class="timer-value" id="seconds">00</div>
+          <div class="timer-label">SECONDES</div>
+        </div>
+      </div>
+
+      <div class="launch-info">
+        <h3>ℹ️ Informations de Lancement</h3>
+        <p>🎯 Contract Address: <strong>8QJ5Qq9XqXVQw8QJ5Qq9XqXVQw8QJ5Qq9XqXVQw8QJ</strong></p>
+        <p>📈 Plateforme: Pump.fun</p>
+        <p>🔥 Supply Total: 666,666,666 $DIVC</p>
+        <p>🔒 Liquidity: Locked pour l'éternité</p>
+      </div>
+
+      <a class="btn btn-buy btn-big" href="https://pump.fun/8QJ5Qq9XqXVQw8QJ5Qq9XqXVQw8QJ5Qq9XqXVQw8QJ" target="_blank" rel="noopener" aria-label="Acheter sur Pump.fun">ACHETER SUR PUMP.FUN 🚀</a>
+    </div>
+    <footer>
+      <div class="container">
+        <p>© 2025 DivinaCrack Cult • Not financial advice • 100% degen, 0% sleep</p>
+        <p aria-label="Avertissement">Ce token n’a aucune valeur intrinsèque. Vous pourriez tout perdre. C’est ça la magie. ✨</p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Sigil Page -->
+  <main class="page-section" id="sigil-page">
+    <section class="hero" aria-labelledby="sigil-title">
+      <div class="container">
+        <h1 id="sigil-title" class="title glow">Le Sigil Mystique 🔮</h1>
+        <p class="subtitle">Seuls les élus peuvent invoquer le token sacré. Entrez votre mantra.</p>
+
+        <div class="sigil-container">
+          <div class="sigil pulse" aria-hidden="true"></div>
+        </div>
+
+        <div class="countdown" id="sigil-countdown">Invocation dans: 00:00:00</div>
+
+        <div class="form">
+          <h2>Invocation Secrète</h2>
+          <p>Whisper your crypto mantra to awaken the sigil.</p>
+          <input type="text" id="mantraInput" placeholder="ex: WAGMI1000x" aria-label="Entrez votre mantra">
+          <button id="invokeBtn">Invoquer le Sigil</button>
+          <div id="invocationMsg" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <p>© 2025 DivinaCrack Cult • Not financial advice • 100% degen, 0% sleep</p>
+        <p aria-label="Avertissement">Ce token n’a aucune valeur intrinsèque. Vous pourriez tout perdre. C’est ça la magie. ✨</p>
+      </div>
+    </footer>
+  </main>
+
   <footer>
     <div class="container">
-      <p><strong>Not financial advice, only divine chaos.</strong></p>
-      <p>Copyright 2025 DivinaCrack</p>
+      <p>© 2025 DivinaCrack Cult • Not financial advice • 100% degen, 0% sleep</p>
+      <p aria-label="Avertissement">Ce token n’a aucune valeur intrinsèque. Vous pourriez tout perdre. C’est ça la magie. ✨</p>
     </div>
   </footer>
 
+  <!-- Reduced motion toggle -->
   <div class="reduced-motion-toggle">
-    <button class="reduced-motion-btn" id="toggleMotion">🌀</button>
+    <button class="reduced-motion-btn" aria-label="Toggle reduced motion" id="motionToggle">♿</button>
   </div>
 
   <script>
-    // Reduced motion toggle
-    document.getElementById('toggleMotion').addEventListener('click', function() {
-      document.body.classList.toggle('reduced-motion');
-      
-      if (document.body.classList.contains('reduced-motion')) {
-        this.innerHTML = '⚡';
-      } else {
-        this.innerHTML = '🌀';
-      }
-    });
-
-    // Check system preference on load
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.body.classList.add('reduced-motion');
-      document.getElementById('toggleMotion').innerHTML = '⚡';
-    }
-
-    // Simple button interactions
-    document.querySelectorAll('.btn').forEach(button => {
-      button.addEventListener('click', function() {
-        if (this.classList.contains('btn-buy')) {
-          alert('🚀 BUYING DIVINACRACK... PUMP INITIATED! 🚀\n\nWAGMI! LFG! 1000x incoming! 😈');
-        } else {
-          alert('🔥 JOINING THE CULT... ILLUMINATION PROCESS STARTED! 🔥\n\nWelcome to the Illuminati Degen Council! 🙏');
-        }
+    // Page navigation (only for internal pages)
+    document.querySelectorAll('[data-page]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetPage = link.dataset.page;
+        
+        // Update active page
+        document.querySelectorAll('.page-section').forEach(page => {
+          page.classList.remove('active');
+        });
+        document.getElementById(targetPage + '-page').classList.add('active');
+        
+        // Update nav links
+        document.querySelectorAll('.nav-link').forEach(nav => {
+          nav.classList.remove('active');
+        });
+        document.querySelector(`.nav-link[data-page="${targetPage}"]`)?.classList.add('active');
+        
+        // Scroll to top
+        window.scrollTo(0, 0);
       });
     });
+
+    // Reduced motion toggle
+    const motionToggle = document.getElementById('motionToggle');
+    let reducedMotion = false;
+    
+    const applyReducedMotion = () => {
+      if (reducedMotion) {
+        document.body.classList.add('reduced-motion');
+      } else {
+        document.body.classList.remove('reduced-motion');
+      }
+    };
+
+    motionToggle.addEventListener('click', () => {
+      reducedMotion = !reducedMotion;
+      applyReducedMotion();
+    });
+
+    // Main countdown timer (for sigil page)
+    const sigilCountdownEl = document.getElementById('sigil-countdown');
+    if (sigilCountdownEl) {
+      const endTime = new Date();
+      endTime.setMinutes(endTime.getMinutes() + 10);
+
+      const updateCountdown = () => {
+        const now = new Date();
+        const diff = endTime - now;
+        if (diff <= 0) {
+          sigilCountdownEl.textContent = "Invocation prête ! 🔥";
+          return;
+        }
+        const mins = Math.floor(diff / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+        sigilCountdownEl.textContent = `Invocation dans: ${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      };
+      
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+
+    // Launch countdown timer (for countdown page)
+    const launchTimerElements = {
+      days: document.getElementById('days'),
+      hours: document.getElementById('hours'),
+      minutes: document.getElementById('minutes'),
+      seconds: document.getElementById('seconds')
+    };
+
+    // Set launch date to 24 hours from now (you can change this)
+    const launchDate = new Date();
+    launchDate.setHours(launchDate.getHours() + 24);
+
+    const updateLaunchCountdown = () => {
+      const now = new Date();
+      const diff = launchDate - now;
+      
+      if (diff <= 0) {
+        // Launch has started
+        Object.values(launchTimerElements).forEach(el => {
+          if (el) el.textContent = '00';
+        });
+        return;
+      }
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      if (launchTimerElements.days) launchTimerElements.days.textContent = days.toString().padStart(2, '0');
+      if (launchTimerElements.hours) launchTimerElements.hours.textContent = hours.toString().padStart(2, '0');
+      if (launchTimerElements.minutes) launchTimerElements.minutes.textContent = minutes.toString().padStart(2, '0');
+      if (launchTimerElements.seconds) launchTimerElements.seconds.textContent = seconds.toString().padStart(2, '0');
+    };
+
+    // Initialize and update countdown
+    if (Object.values(launchTimerElements).some(el => el !== null)) {
+      updateLaunchCountdown();
+      setInterval(updateLaunchCountdown, 1000);
+    }
+
+    // Sigil form handling
+    const invokeBtn = document.getElementById('invokeBtn');
+    const mantraInput = document.getElementById('mantraInput');
+    const invocationMsg = document.getElementById('invocationMsg');
+    
+    if (invokeBtn) {
+      invokeBtn.addEventListener('click', () => {
+        const mantra = mantraInput.value.trim();
+        if (!mantra) {
+          invocationMsg.textContent = "Le mantra ne peut pas être vide !";
+          invocationMsg.style.color = "#ff3ec8";
+          return;
+        }
+        invocationMsg.textContent = "✨ Sigil invoqué ! Check ton wallet...";
+        invocationMsg.style.color = "#ffd166";
+        mantraInput.value = '';
+      });
+    }
+
+    // Meme sticker interactions
+    document.querySelectorAll('.meme-sticker').forEach(sticker => {
+      sticker.addEventListener('click', () => {
+        const emoji = sticker.querySelector('.emoji').textContent;
+        alert(`Tu as invoqué ${sticker.textContent.trim()} ! ${emoji}`);
+      });
+    });
+
+    // Social link handling - ensure Twitter link works
+    document.querySelectorAll('.social').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    });
+
+    // Solana wallet connection with backend integration
+    const connectButton = document.getElementById('connect-wallet');
+    const walletStatus = document.getElementById('wallet-status');
+
+    if (connectButton) {
+      connectButton.addEventListener('click', async () => {
+        // Vérifie si Phantom est installé
+        if (window.solana && window.solana.isPhantom) {
+          try {
+            // Afficher état en cours
+            walletStatus.textContent = "Connexion en cours...";
+            walletStatus.className = "error";
+            walletStatus.style.display = "block";
+            
+            // Demande la connexion au wallet Phantom
+            const resp = await window.solana.connect();
+            const walletAddress = resp.publicKey.toString();
+
+            // Envoie l'adresse au serveur
+            const response = await fetch("http://localhost:3000/api/save-wallet", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ address: walletAddress })
+            });
+
+            if (response.ok) {
+              walletStatus.textContent = `✅ Wallet connecté ! Adresse: ${walletAddress.substring(0, 6)}...${walletAddress.substring(walletAddress.length - 4)}`;
+              walletStatus.className = "success";
+              console.log("Adresse Solana envoyée au serveur:", walletAddress);
+            } else {
+              walletStatus.textContent = "❌ Erreur serveur lors de l'enregistrement";
+              walletStatus.className = "error";
+            }
+
+          } catch (err) {
+            console.error("Erreur de connexion au wallet:", err);
+            walletStatus.textContent = `❌ Erreur: ${err.message || "Connexion annulée"}`;
+            walletStatus.className = "error";
+          }
+        } else {
+          walletStatus.textContent = "❌ Phantom Wallet n'est pas installé. Installe-le depuis https://phantom.app/";
+          walletStatus.className = "error";
+          walletStatus.style.display = "block";
+        }
+      });
+    }
   </script>
 </body>
 </html>
+
+
 
             
