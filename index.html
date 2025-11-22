@@ -704,8 +704,7 @@
           <h3>Discord Secret</h3>
           <p>Seuls les initiés connaissent le lien. Whisper "WAGMI" à un oracle.</p>
           <div class="community-links">
-            <a href="https://twitter.com/divinacrack" target="_blank" rel="noopener" class="social">𝕏</a>
-            <a href="https://t.me/divinacrack" target="_blank" rel="noopener" class="social">Telegram</a>
+            <a href="https://twitter.com/CrackDivina" target="_blank" rel="noopener" class="social">𝕏</a>
           </div>
         </div>
       </div>
@@ -836,16 +835,22 @@
       });
     }
 
-   // Meme sticker interactions 
-<script>
-  document.querySelectorAll('.meme-sticker').forEach(sticker => {
-    sticker.addEventListener('click', () => {
-      const emoji = sticker.querySelector('.emoji').textContent;
-      // Redirection vers Twitter au lieu d'une alerte
-      window.location.href = "https://twitter.com/CrackDivina";
+    // Meme sticker interactions
+    document.querySelectorAll('.meme-sticker').forEach(sticker => {
+      sticker.addEventListener('click', () => {
+        const emoji = sticker.querySelector('.emoji').textContent;
+        alert(`Tu as invoqué ${sticker.textContent.trim()} ! ${emoji}`);
+      });
     });
-  });
-</script>
+
+    // Social link handling - ensure Twitter link works
+    document.querySelectorAll('.social').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    });
+  </script>
 </body>
 </html>
+
 
