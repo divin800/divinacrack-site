@@ -1,0 +1,649 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DivinaCrack – Crack the Code, Pump the Universe</title>
+  <meta name="description" content="DivinaCrack — token crypto ésotérique & déjanté. Meme degens + occult vibes. Join the cult or stay mortal." />
+
+  <!-- SEO & Structured Data -->
+  <meta name="keywords" content="divinacrack, crypto meme, pump token, degen, occult crypto, 1000x, meme coin" />
+  <meta name="author" content="DivinaCrack Cult" />
+  <meta property="og:title" content="DivinaCrack – Crack the Code, Pump the Universe 🚀🌌" />
+  <meta property="og:description" content="Token crypto ésotérique & déjanté. Meme degens + occult vibes. Join the cult or stay mortal." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://divinacrack.fun" />
+  <meta property="og:image" content="https://placehold.co/1200x630/9b34ef/ffffff?text=DivinaCrack+%F0%9F%9A%80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DivinaCrack – Crack the Code, Pump the Universe" />
+  <meta name="twitter:description" content="Ceux qui l’entendent ne cherchent plus la lumière… ils cherchent du 1000x. 💸✨" />
+  <meta name="twitter:image" content="https://placehold.co/1200x630/9b34ef/ffffff?text=DivinaCrack+%F0%9F%9A%80" />
+
+  <!-- Preload critical resources -->
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" crossorigin />
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" crossorigin />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0c0614;
+      --violet: #9b34ef;
+      --pink: #ff3ec8;
+      --gold: #ffd166;
+      --blue: #3ad6ff;
+      --text: #e8e0ff;
+      --muted: #b9a8ff;
+      --glow: 0 0 14px rgba(155,52,239,.7), 0 0 40px rgba(255,62,200,.4);
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    *{ box-sizing: border-box }
+    html, body{
+      margin: 0;
+      background:
+        radial-gradient(1200px 500px at 10% 10%, rgba(155,52,239,.15), transparent 60%),
+        radial-gradient(800px 400px at 90% 10%, rgba(255,62,200,.12), transparent 60%),
+        radial-gradient(900px 500px at 50% 100%, rgba(58,214,255,.12), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      font-family: "Chakra Petch", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.15;
+      overflow-x: hidden;
+    }
+
+    a{ color: var(--pink); text-decoration: none }
+    img{ max-width: 100%; height: auto; display: block }
+
+    .container{
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Occult rune background overlay */
+    .occult-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.08;
+    }
+
+    .rune {
+      position: absolute;
+      font-size: 40px;
+      animation: rotate 20s linear infinite;
+    }
+
+    .rune:nth-child(1) { top: 15%; left: 5%; }
+    .rune:nth-child(2) { top: 25%; right: 10%; animation-duration: 25s; }
+    .rune:nth-child(3) { bottom: 20%; left: 12%; animation-duration: 30s; }
+    .rune:nth-child(4) { bottom: 15%; right: 8%; animation-duration: 18s; }
+    .rune:nth-child(5) { top: 40%; left: 50%; animation-duration: 22s; }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Header */
+    header{
+      position: sticky; top: 0; z-index: 99;
+      backdrop-filter: blur(10px);
+      background: rgba(12,6,20,.65);
+      border-bottom: 1px dashed rgba(255,255,255,.12);
+    }
+    .nav{
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 0;
+    }
+    .brand{
+      display: flex; align-items: center; gap: 12px;
+      text-shadow: var(--glow);
+    }
+    .logo{
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 30%, var(--gold), #ff9f1a 40%, transparent 41%),
+        conic-gradient(from 180deg, #1a1a1a 0 70%, var(--violet) 70% 100%);
+      box-shadow: 0 0 20px rgba(255,209,102,.6), 0 0 40px rgba(255,62,200,.3);
+      position: relative;
+      overflow: hidden;
+    }
+    /* œil illuminati cartoon qui rigole */
+    .logo::before{
+      content: "";
+      position: absolute; inset: 8px;
+      border: 3px solid #111;
+      border-top-color: transparent;
+      border-radius: 50%;
+      transform: rotate(12deg);
+    }
+    .brand h1{
+      font-family: "Bangers", cursive;
+      font-size: 1.4rem; letter-spacing: .8px; margin: 0;
+    }
+    .cta-bar{
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover, .nav-link.active {
+      background: rgba(155,52,239,0.2);
+      box-shadow: 0 0 10px rgba(155,52,239,0.5);
+    }
+
+    /* Buttons */
+    .btn{
+      font-family: "Bangers", cursive;
+      font-size: 1rem;
+      padding: 12px 18px;
+      border: 2px solid rgba(255,255,255,.2);
+      border-radius: 999px;
+      color: #0b0613;
+      cursor: pointer;
+      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+      text-transform: uppercase;
+    }
+    .btn-big{
+      font-size: 1.25rem; padding: 14px 22px;
+    }
+    .btn-buy{
+      background: linear-gradient(135deg, var(--pink), var(--violet));
+      box-shadow: 0 0 25px rgba(255,62,200,.5);
+    }
+    .btn-cult{
+      background: linear-gradient(135deg, var(--gold), #ff6);
+      box-shadow: 0 0 22px rgba(255,209,102,.45);
+    }
+    .btn:hover{
+      transform: translateY(-2px) scale(1.02);
+      filter: brightness(1.08);
+    }
+    .btn-sigil {
+      background: linear-gradient(135deg, var(--blue), var(--violet));
+      box-shadow: 0 0 25px rgba(58,214,255,.5);
+    }
+    .btn-sigil:hover {
+      transform: translateY(-2px) scale(1.02);
+      filter: brightness(1.08);
+      box-shadow: 0 0 35px rgba(58,214,255,.7);
+    }
+
+    /* Hero */
+    .hero{
+      padding: 70px 0 40px;
+      text-align: center;
+      position: relative;
+    }
+    .hero .title{
+      font-family: "Bangers", cursive;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      margin: 0 0 12px;
+      text-shadow:
+        0 0 10px rgba(155,52,239,.5),
+        0 0 22px rgba(255,62,200,.25);
+    }
+    .hero .subtitle{
+      color: var(--muted);
+      font-size: clamp(.95rem, 2.5vw, 1.15rem);
+      margin: 6px auto 22px;
+      max-width: 800px;
+    }
+    .hero .badge-row{
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      flex-wrap: wrap; margin: 24px 0;
+    }
+    .meme-sticker{
+      border: 2px dashed rgba(255,255,255,.18);
+      border-radius: 14px;
+      padding: 10px 14px;
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 20px rgba(58,214,255,.25);
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 700;
+    }
+    .meme-sticker .emoji{ font-size: 1.6rem }
+
+    .hero-cta{
+      display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    /* Sections */
+    section{
+      padding: 50px 0;
+      border-top: 1px dashed rgba(255,255,255,.12);
+    }
+    h2.section-title{
+      font-family: "Bangers", cursive;
+      font-size: clamp(1.6rem, 3.3vw, 2.4rem);
+      margin: 0 0 16px;
+      text-shadow: var(--glow);
+    }
+    .grid{
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .col-12{ grid-column: span 12 }
+    .col-6{ grid-column: span 6 }
+    .col-4{ grid-column: span 4 }
+    .card{
+      background: rgba(255,255,255,.05);
+      border: 1px dashed rgba(255,255,255,.15);
+      border-radius: 16px;
+      padding: 18px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 30px rgba(155,52,239,.18);
+    }
+    .card h3{
+      font-family: "Bangers", cursive;
+      margin: 0 0 10px; font-size: 1.3rem;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255,209,102,.4);
+    }
+    .card p{ margin: 8px 0; color: var(--muted) }
+
+    .tokenomics{
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .tokenomic-item{
+      text-align: center;
+      padding: 18px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.04);
+      border: 1px dashed rgba(255,255,255,.16);
+    }
+    .tokenomic-item .label{
+      font-family: "Bangers", cursive;
+      color: var(--pink);
+      font-size: 1.1rem;
+    }
+    .tokenomic-item .value{
+      font-size: 1.6rem; margin-top: 6px;
+      text-shadow: 0 0 14px rgba(255,62,200,.35);
+    }
+
+    .community-links{
+      display: flex; gap: 12px; flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .social{
+      padding: 10px 14px; border-radius: 999px;
+      border: 2px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      font-weight: 700;
+      box-shadow: 0 0 18px rgba(58,214,255,.25);
+    }
+
+    .roadmap{
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .phase{
+      padding: 18px;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(155,52,239,.15), rgba(255,62,200,.12));
+      border: 1px dashed rgba(255,255,255,.18);
+      box-shadow: 0 0 22px rgba(155,52,239,.18);
+    }
+    .phase h4{
+      margin: 0 0 10px; font-size: 1.2rem; color: var(--blue);
+      font-family: "Bangers", cursive;
+      text-shadow: 0 0 12px rgba(58,214,255,.35);
+    }
+    .phase p{ color: var(--muted) }
+
+    /* Neon glow utility */
+    .glow{
+      text-shadow:
+        0 0 8px rgba(155,52,239,.6),
+        0 0 16px rgba(255,62,200,.35),
+        0 0 34px rgba(58,214,255,.25);
+    }
+
+    /* Footer */
+    footer{
+      padding: 30px 0;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px dashed rgba(255,255,255,.12);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .tokenomics{ grid-template-columns: 1fr 1fr; }
+      .roadmap{ grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 640px){
+      .tokenomics{ grid-template-columns: 1fr; }
+      .roadmap{ grid-template-columns: 1fr; }
+      .cta-bar .btn{ padding: 10px 14px }
+    }
+
+    /* Fun animations */
+    @keyframes floaty {
+      0% { transform: translateY(0) rotate(0deg) }
+      50% { transform: translateY(-6px) rotate(2deg) }
+      100% { transform: translateY(0) rotate(0deg) }
+    }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 14px rgba(155,52,239,.5) }
+      50% { box-shadow: 0 0 30px rgba(255,62,200,.6) }
+      100% { box-shadow: 0 0 14px rgba(155,52,239,.5) }
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-12px);}
+      60% {transform: translateY(-6px);}
+    }
+    .floaty{ animation: floaty 3.5s ease-in-out infinite }
+    .pulse{ animation: pulseGlow 2.6s ease-in-out infinite }
+
+    /* Scroll reveals */
+    .reveal{
+      opacity: 0; transform: translateY(12px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible{
+      opacity: 1; transform: translateY(0);
+    }
+
+    /* Meme GIF container */
+    .meme-gif {
+      max-height: 120px;
+      border-radius: 10px;
+      margin-top: 8px;
+      border: 2px solid rgba(255,62,200,0.3);
+      box-shadow: 0 0 15px rgba(255,62,200,0.2);
+    }
+
+    /* Particle effect container */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Accessibility: Reduced motion toggle */
+    .reduced-motion-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    .reduced-motion-btn {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,62,200,0.3);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+    }
+    .reduced-motion-btn:hover {
+      transform: scale(1.1);
+      background: rgba(255,62,200,0.2);
+    }
+
+    /* Schema.org structured data container */
+    .schema-data {
+      display: none;
+    }
+
+    /* Page sections */
+    .page-section {
+      min-height: 100vh;
+      display: none;
+      animation: fadeIn 0.5s ease forwards;
+    }
+    .page-section.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sigil page specific styles */
+    #sigil-page {
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(155,52,239,0.15), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255,62,200,0.12), transparent 45%),
+        radial-gradient(circle at center, var(--bg), #000);
+    }
+    #sigil-page .sigil-container {
+      position: relative;
+      display: inline-block;
+      margin: 40px auto;
+    }
+    #sigil-page .sigil {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg, var(--pink), var(--violet), var(--blue));
+      box-shadow: 
+        0 0 20px rgba(255,62,200,0.4),
+        0 0 40px rgba(155,52,239,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    #sigil-page .sigil::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      background: #000;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid var(--gold);
+    }
+    #sigil-page .sigil::after {
+      content: "🧿";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.2);
+      font-size: 32px;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255,209,102,0.8);
+    }
+    #sigil-page .countdown {
+      font-family: 'Chakra Petch', monospace;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      margin: 30px 0;
+      color: var(--gold);
+      text-shadow: 0 0 15px rgba(255,209,102,0.6);
+      font-weight: 700;
+    }
+    #sigil-page .form {
+      margin: 40px auto;
+      max-width: 420px;
+      background: rgba(255,255,255,0.05);
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 
+        0 0 20px rgba(155,52,239,0.3),
+        inset 0 0 10px rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    #sigil-page .form h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255,209,102,0.4);
+    }
+    #sigil-page .form p {
+      margin-bottom: 20px;
+      color: var(--muted);
+    }
+    #sigil-page .form input {
+      width: 100%;
+      padding: 14px 18px;
+      margin: 12px 0;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      font-size: 1.1rem;
+      background: rgba(0,0,0,0.3);
+      color: var(--text);
+      font-family: 'Chakra Petch', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+    #sigil-page .form input:focus {
+      outline: none;
+      border-color: var(--pink);
+      box-shadow: 0 0 15px rgba(255,62,200,0.3);
+    }
+    #sigil-page .form button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--violet), var(--pink));
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-family: 'Chakra Petch', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(155,52,239,0.3);
+    }
+    #sigil-page .form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,62,200,0.4);
+    }
+    #sigil-page .form button:active {
+      transform: translateY(1px);
+    }
+    #sigil-page #invocationMsg {
+      margin-top: 12px;
+      min-height: 24px;
+      font-weight: 700;
+    }
+    #sigil-page .glyph {
+      position: fixed;
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      opacity: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+    #sigil-page footer {
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json" class="schema-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DivinaCrack",
+    "url": "https://divinacrack.fun",
+    "description": "Token crypto ésotérique & déjanté. Meme degens + occult vibes. Join the cult or stay mortal.",
+    "creator": {
+      "@type": "Organization",
+      "name": "DivinaCrack Cult"
+    }
+  }
+  </script>
+
+  <div class="occult-bg">
+    <div class="rune">ᚠ</div>
+    <div class="rune">ᚢ</div>
+    <div class="rune">ᚦ</div>
+    <div class="rune">ᚨ</div>
+    <div class="rune">ᚱ</div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo pulse" aria-hidden="true"></div>
+        <h1 aria-label="Divina Crack">#DivinaCrack</h1>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-link active" data-page="main">Home</a>
+        <a href="#" class="nav-link" data-page="sigil">Le Sigil</a>
+      </div>
+      <div class="cta-bar">
+        <a class="btn btn-buy btn-big" href="#buy" aria-label="Acheter DivinaCrack maintenant">BUY NOW 🚀</a>
+        <a class="btn btn-cult btn-big" href="#join" aria-label="Rejoindre le culte DivinaCrack">JOIN CULT 😈</a>
+        <a class="btn btn-sigil btn-big" href="#sigil" aria-label="Voir le Sigil mystique">SIGIL 🔮</a>
+      </div>
+    </div>
+  </header>
+
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- Main Page -->
+  <main class="page-section active" id="main-page">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <h1 id="hero-title" class="title glow">Crack the Code, Pump the Universe 🚀🌌</h1>
+        <p class="subtitle">Ceux qui l’entendent ne cherchent plus la lumière… ils cherchent du <strong>1000x</strong>. 💸✨ WAGMI • LFG • Degen mode ON.</p>
+
+        <div class="badge-row" role="group" aria-label="Personnages mèmes">
+          <div class="meme-sticker floaty" role="button" tabindex="0">
+            <span class="emoji" aria-hidden="true">🐸</span> Grenouille oracle
+          </div>
+          <div class="meme-sticker floaty" role="button" tabindex="0">
+            <span class="emoji" aria-hidden="true">😼</span> Chat mage
+          </div>
+          <div class="meme-sticker floaty" role="button" tabindex="0">
+            <span class="emoji" aria-hidden="true">🧿</span> Illuminati avec lunettes pixel
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a class="btn btn-buy btn-big" href="#buy" aria-label="Acheter DivinaCrack maintenant">BUY NOW 🚀</a>
+          <a class="btn btn-cult btn-big" href="#join" aria-label="Rejoindre le culte DivinaCrack">JOIN CULT 🔮🤣</a>
+          <a class="btn btn-sigil btn-big" href="#sigil-pag
