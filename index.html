@@ -13,11 +13,11 @@
   <meta property="og:description" content="Token crypto ésotérique & déjanté. Meme degens + occult vibes. Join the cult or stay mortal." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://divinacrack.fun" />
-  <meta property="og:image" content="https://placehold.co/1200x630/9b34ef/ffffff?text=DivinaCrack+%F0%9F%9A%80" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/divin800/divinacrack-site/main/ChatGPT%20Image%2020%20nov.%202025%2C%2017_46_44.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="DivinaCrack – Crack the Code, Pump the Universe" />
   <meta name="twitter:description" content="Ceux qui l’entendent ne cherchent plus la lumière… ils cherchent du 1000x. 💸✨" />
-  <meta name="twitter:image" content="https://placehold.co/1200x630/9b34ef/ffffff?text=DivinaCrack+%F0%9F%9A%80" />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/divin800/divinacrack-site/main/ChatGPT%20Image%2020%20nov.%202025%2C%2017_46_44.png" />
 
   <!-- Preload critical resources -->
   <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" crossorigin />
@@ -117,24 +117,27 @@
       display: flex; align-items: center; gap: 12px;
       text-shadow: var(--glow);
     }
-    .logo{
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 30% 30%, var(--gold), #ff9f1a 40%, transparent 41%),
-        conic-gradient(from 180deg, #1a1a1a 0 70%, var(--violet) 70% 100%);
-      box-shadow: 0 0 20px rgba(255,209,102,.6), 0 0 40px rgba(255,62,200,.3);
+    .logo-container {
+      width: 48px;
+      height: 48px;
       position: relative;
-      overflow: hidden;
-    }
-    /* œil illuminati cartoon qui rigole */
-    .logo::before{
-      content: "";
-      position: absolute; inset: 8px;
-      border: 3px solid #111;
-      border-top-color: transparent;
       border-radius: 50%;
-      transform: rotate(12deg);
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255,209,102,.6), 0 0 40px rgba(255,62,200,.3);
+    }
+    .logo{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .pulse {
+      animation: pulse 2.6s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
     }
     .brand h1{
       font-family: "Bangers", cursive;
@@ -142,22 +145,6 @@
     }
     .cta-bar{
       display: flex; gap: 10px; flex-wrap: wrap;
-    }
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-    .nav-link {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-    .nav-link:hover, .nav-link.active {
-      background: rgba(155,52,239,0.2);
-      box-shadow: 0 0 10px rgba(155,52,239,0.5);
     }
 
     /* Buttons */
@@ -187,15 +174,6 @@
       transform: translateY(-2px) scale(1.02);
       filter: brightness(1.08);
     }
-    .btn-sigil {
-      background: linear-gradient(135deg, var(--blue), var(--violet));
-      box-shadow: 0 0 25px rgba(58,214,255,.5);
-    }
-    .btn-sigil:hover {
-      transform: translateY(-2px) scale(1.02);
-      filter: brightness(1.08);
-      box-shadow: 0 0 35px rgba(58,214,255,.7);
-    }
 
     /* Hero */
     .hero{
@@ -217,26 +195,6 @@
       margin: 6px auto 22px;
       max-width: 800px;
     }
-    .hero .badge-row{
-      display: flex; align-items: center; justify-content: center; gap: 14px;
-      flex-wrap: wrap; margin: 24px 0;
-    }
-    .meme-sticker{
-      border: 2px dashed rgba(255,255,255,.18);
-      border-radius: 14px;
-      padding: 10px 14px;
-      background: rgba(255,255,255,.04);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 0 20px rgba(58,214,255,.25);
-      display: inline-flex; align-items: center; gap: 10px;
-      font-weight: 700;
-    }
-    .meme-sticker .emoji{ font-size: 1.6rem }
-
-    .hero-cta{
-      display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
-      margin-top: 10px;
-    }
 
     /* Sections */
     section{
@@ -249,88 +207,6 @@
       margin: 0 0 16px;
       text-shadow: var(--glow);
     }
-    .grid{
-      display: grid; gap: 16px;
-      grid-template-columns: repeat(12, 1fr);
-    }
-    .col-12{ grid-column: span 12 }
-    .col-6{ grid-column: span 6 }
-    .col-4{ grid-column: span 4 }
-    .card{
-      background: rgba(255,255,255,.05);
-      border: 1px dashed rgba(255,255,255,.15);
-      border-radius: 16px;
-      padding: 18px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 0 30px rgba(155,52,239,.18);
-    }
-    .card h3{
-      font-family: "Bangers", cursive;
-      margin: 0 0 10px; font-size: 1.3rem;
-      color: var(--gold);
-      text-shadow: 0 0 10px rgba(255,209,102,.4);
-    }
-    .card p{ margin: 8px 0; color: var(--muted) }
-
-    .tokenomics{
-      display: grid; gap: 16px;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .tokenomic-item{
-      text-align: center;
-      padding: 18px;
-      border-radius: 12px;
-      background: rgba(255,255,255,.04);
-      border: 1px dashed rgba(255,255,255,.16);
-    }
-    .tokenomic-item .label{
-      font-family: "Bangers", cursive;
-      color: var(--pink);
-      font-size: 1.1rem;
-    }
-    .tokenomic-item .value{
-      font-size: 1.6rem; margin-top: 6px;
-      text-shadow: 0 0 14px rgba(255,62,200,.35);
-    }
-
-    .community-links{
-      display: flex; gap: 12px; flex-wrap: wrap;
-      margin-top: 10px;
-    }
-    .social{
-      padding: 10px 14px; border-radius: 999px;
-      border: 2px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.06);
-      font-weight: 700;
-      box-shadow: 0 0 18px rgba(58,214,255,.25);
-    }
-
-    .roadmap{
-      display: grid; gap: 16px;
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .phase{
-      padding: 18px;
-      border-radius: 14px;
-      background:
-        linear-gradient(135deg, rgba(155,52,239,.15), rgba(255,62,200,.12));
-      border: 1px dashed rgba(255,255,255,.18);
-      box-shadow: 0 0 22px rgba(155,52,239,.18);
-    }
-    .phase h4{
-      margin: 0 0 10px; font-size: 1.2rem; color: var(--blue);
-      font-family: "Bangers", cursive;
-      text-shadow: 0 0 12px rgba(58,214,255,.35);
-    }
-    .phase p{ color: var(--muted) }
-
-    /* Neon glow utility */
-    .glow{
-      text-shadow:
-        0 0 8px rgba(155,52,239,.6),
-        0 0 16px rgba(255,62,200,.35),
-        0 0 34px rgba(58,214,255,.25);
-    }
 
     /* Footer */
     footer{
@@ -340,67 +216,16 @@
       border-top: 1px dashed rgba(255,255,255,.12);
     }
 
-    /* Responsive */
-    @media (max-width: 980px){
-      .tokenomics{ grid-template-columns: 1fr 1fr; }
-      .roadmap{ grid-template-columns: 1fr 1fr; }
-      .nav-links { display: none; }
+    /* Page sections */
+    .page-section {
+      min-height: 100vh;
+      display: none;
     }
-    @media (max-width: 640px){
-      .tokenomics{ grid-template-columns: 1fr; }
-      .roadmap{ grid-template-columns: 1fr; }
-      .cta-bar .btn{ padding: 10px 14px }
+    .page-section.active {
+      display: block;
     }
 
-    /* Fun animations */
-    @keyframes floaty {
-      0% { transform: translateY(0) rotate(0deg) }
-      50% { transform: translateY(-6px) rotate(2deg) }
-      100% { transform: translateY(0) rotate(0deg) }
-    }
-    @keyframes pulseGlow {
-      0% { box-shadow: 0 0 14px rgba(155,52,239,.5) }
-      50% { box-shadow: 0 0 30px rgba(255,62,200,.6) }
-      100% { box-shadow: 0 0 14px rgba(155,52,239,.5) }
-    }
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-      40% {transform: translateY(-12px);}
-      60% {transform: translateY(-6px);}
-    }
-    .floaty{ animation: floaty 3.5s ease-in-out infinite }
-    .pulse{ animation: pulseGlow 2.6s ease-in-out infinite }
-
-    /* Scroll reveals */
-    .reveal{
-      opacity: 0; transform: translateY(12px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .reveal.visible{
-      opacity: 1; transform: translateY(0);
-    }
-
-    /* Meme GIF container */
-    .meme-gif {
-      max-height: 120px;
-      border-radius: 10px;
-      margin-top: 8px;
-      border: 2px solid rgba(255,62,200,0.3);
-      box-shadow: 0 0 15px rgba(255,62,200,0.2);
-    }
-
-    /* Particle effect container */
-    #particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    /* Accessibility: Reduced motion toggle */
+    /* Reduced motion toggle */
     .reduced-motion-toggle {
       position: fixed;
       bottom: 20px;
@@ -427,173 +252,13 @@
       background: rgba(255,62,200,0.2);
     }
 
-    /* Schema.org structured data container */
-    .schema-data {
-      display: none;
-    }
-
-    /* Page sections */
-    .page-section {
-      min-height: 100vh;
-      display: none;
-      animation: fadeIn 0.5s ease forwards;
-    }
-    .page-section.active {
-      display: block;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Sigil page specific styles */
-    #sigil-page {
-      background: 
-        radial-gradient(circle at 20% 30%, rgba(155,52,239,0.15), transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(255,62,200,0.12), transparent 45%),
-        radial-gradient(circle at center, var(--bg), #000);
-    }
-    #sigil-page .sigil-container {
-      position: relative;
-      display: inline-block;
-      margin: 40px auto;
-    }
-    #sigil-page .sigil {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: conic-gradient(from 180deg, var(--pink), var(--violet), var(--blue));
-      box-shadow: 
-        0 0 20px rgba(255,62,200,0.4),
-        0 0 40px rgba(155,52,239,0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    #sigil-page .sigil::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 60px;
-      height: 60px;
-      background: #000;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      border: 2px solid var(--gold);
-    }
-    #sigil-page .sigil::after {
-      content: "🧿";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(1.2);
-      font-size: 32px;
-      color: var(--gold);
-      text-shadow: 0 0 10px rgba(255,209,102,0.8);
-    }
-    #sigil-page .countdown {
-      font-family: 'Chakra Petch', monospace;
-      font-size: clamp(1.8rem, 5vw, 2.5rem);
-      margin: 30px 0;
-      color: var(--gold);
-      text-shadow: 0 0 15px rgba(255,209,102,0.6);
-      font-weight: 700;
-    }
-    #sigil-page .form {
-      margin: 40px auto;
-      max-width: 420px;
-      background: rgba(255,255,255,0.05);
-      padding: 24px;
-      border-radius: 16px;
-      box-shadow: 
-        0 0 20px rgba(155,52,239,0.3),
-        inset 0 0 10px rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    #sigil-page .form h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: var(--gold);
-      text-shadow: 0 0 10px rgba(255,209,102,0.4);
-    }
-    #sigil-page .form p {
-      margin-bottom: 20px;
-      color: var(--muted);
-    }
-    #sigil-page .form input {
-      width: 100%;
-      padding: 14px 18px;
-      margin: 12px 0;
-      border: 2px solid rgba(255,255,255,0.15);
-      border-radius: 12px;
-      font-size: 1.1rem;
-      background: rgba(0,0,0,0.3);
-      color: var(--text);
-      font-family: 'Chakra Petch', sans-serif;
-      transition: border-color 0.3s ease;
-    }
-    #sigil-page .form input:focus {
-      outline: none;
-      border-color: var(--pink);
-      box-shadow: 0 0 15px rgba(255,62,200,0.3);
-    }
-    #sigil-page .form button {
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--violet), var(--pink));
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-      font-family: 'Chakra Petch', sans-serif;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-top: 10px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(155,52,239,0.3);
-    }
-    #sigil-page .form button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255,62,200,0.4);
-    }
-    #sigil-page .form button:active {
-      transform: translateY(1px);
-    }
-    #sigil-page #invocationMsg {
-      margin-top: 12px;
-      min-height: 24px;
-      font-weight: 700;
-    }
-    #sigil-page .glyph {
-      position: fixed;
-      font-size: clamp(1.2rem, 3vw, 2rem);
-      opacity: 0;
-      pointer-events: none;
-      z-index: -1;
-    }
-    #sigil-page footer {
-      margin-top: 60px;
+    /* Responsive */
+    @media (max-width: 640px){
+      .cta-bar .btn{ padding: 10px 14px }
     }
   </style>
 </head>
 <body>
-  <!-- Schema.org structured data -->
-  <script type="application/ld+json" class="schema-data">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "DivinaCrack",
-    "url": "https://divinacrack.fun",
-    "description": "Token crypto ésotérique & déjanté. Meme degens + occult vibes. Join the cult or stay mortal.",
-    "creator": {
-      "@type": "Organization",
-      "name": "DivinaCrack Cult"
-    }
-  }
-  </script>
-
   <div class="occult-bg">
     <div class="rune">ᚠ</div>
     <div class="rune">ᚢ</div>
@@ -605,256 +270,118 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <div class="logo pulse" aria-hidden="true"></div>
-        <h1 aria-label="Divina Crack">#DivinaCrack</h1>
-      </div>
-      <div class="nav-links">
-        <a href="#" class="nav-link active" data-page="main">Home</a>
-        <a href="#" class="nav-link" data-page="sigil">Le Sigil</a>
+        <div class="logo-container">
+          <img class="logo pulse" src="https://raw.githubusercontent.com/divin800/divinacrack-site/main/ChatGPT%20Image%2020%20nov.%202025%2C%2017_46_44.png" alt="DivinaCrack Logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"48\" height=\"48\" viewBox=\"0 0 48 48\"><circle cx=\"24\" cy=\"24\" r=\"20\" fill=\"%239b34ef\"/><path d=\"M24 10a14 14 0 0 1 14 14 14 14 0 0 1-14 14 14 14 0 0 1-14-14 14 14 0 0 1 14-14zm0 4a10 10 0 0 0-10 10 10 10 0 0 0 10 10 10 10 0 0 0 10-10 10 10 0 0 0-10-10z\" fill=\"%23ff3ec8\"/></svg>';">
+        </div>
+        <h1>#DivinaCrack</h1>
       </div>
       <div class="cta-bar">
-        <a class="btn btn-buy btn-big" href="javascript:void(0)" data-page="main" aria-label="Acheter DivinaCrack maintenant">BUY NOW 🚀</a>
-        <a class="btn btn-cult btn-big" href="javascript:void(0)" data-page="main" aria-label="Rejoindre le culte DivinaCrack">JOIN CULT 😈</a>
-        <a class="btn btn-sigil btn-big" href="javascript:void(0)" data-page="sigil" aria-label="Voir le Sigil mystique">SIGIL 🔮</a>
+        <button class="btn btn-buy btn-big">BUY NOW 🚀</button>
+        <button class="btn btn-cult btn-big">JOIN CULT 😈</button>
       </div>
     </div>
   </header>
 
-  <canvas id="particles" aria-hidden="true"></canvas>
-
   <!-- Main Page -->
   <main class="page-section active" id="main-page">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero">
       <div class="container">
-        <h1 id="hero-title" class="title glow">Crack the Code, Pump the Universe 🚀🌌</h1>
-        <p class="subtitle">Ceux qui l’entendent ne cherchent plus la lumière… ils cherchent du <strong>1000x</strong>. 💸✨ WAGMI • LFG • Degen mode ON.</p>
-
-        <div class="badge-row" role="group" aria-label="Personnages mèmes">
-          <div class="meme-sticker floaty" role="button" tabindex="0">
-            <span class="emoji" aria-hidden="true">🐸</span> Grenouille oracle
-          </div>
-          <div class="meme-sticker floaty" role="button" tabindex="0">
-            <span class="emoji" aria-hidden="true">😼</span> Chat mage
-          </div>
-          <div class="meme-sticker floaty" role="button" tabindex="0">
-            <span class="emoji" aria-hidden="true">🧿</span> Illuminati avec lunettes pixel
-          </div>
-        </div>
-
-        <div class="hero-cta">
-          <a class="btn btn-buy btn-big" href="javascript:void(0)" data-page="main" aria-label="Acheter DivinaCrack maintenant">BUY NOW 🚀</a>
-          <a class="btn btn-cult btn-big" href="javascript:void(0)" data-page="main" aria-label="Rejoindre le culte DivinaCrack">JOIN CULT 🔮🤣</a>
-          <a class="btn btn-sigil btn-big" href="javascript:void(0)" data-page="sigil" aria-label="Voir le Sigil mystique">SIGIL 🔮</a>
-        </div>
+        <h1 class="title glow">Crack the Code, Pump the Universe 🚀🌌</h1>
+        <p class="subtitle">Ceux qui l'entendent ne cherchent plus la lumière… ils cherchent du <strong>1000x</strong>. 💸✨</p>
       </div>
     </section>
 
-    <!-- TOKENOMICS -->
-    <section aria-labelledby="tokenomics-title">
+    <section>
       <div class="container">
-        <h2 id="tokenomics-title" class="section-title glow">Tokenomics Occultes 📊</h2>
-        <div class="tokenomics">
-          <div class="tokenomic-item">
-            <div class="label">Supply Total</div>
-            <div class="value">666,666,666</div>
+        <h2 class="section-title">What the hell is DivinaCrack? 🤣😈</h2>
+        <p style="text-align: center; color: var(--muted); font-size: 1.1rem;">
+          DivinaCrack est un token crypto ésotérique et déjanté. Des symboles occultes parodiés, des runes cartoon, un œil illuminati qui rigole — bref, le culte le plus absurde de la chaîne. LFG! 🚀🔥
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Tokenomics mème 💸✨</h2>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;">
+          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; text-align: center; min-width: 200px;">
+            <div style="font-family: 'Bangers', cursive; color: var(--pink); font-size: 1.2rem;">Supply</div>
+            <div style="font-size: 1.8rem; margin-top: 10px; text-shadow: 0 0 14px rgba(255,62,200,.35);">∞? maybe</div>
           </div>
-          <div class="tokenomic-item">
-            <div class="label">Burn Initial</div>
-            <div class="value">66%</div>
+          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; text-align: center; min-width: 200px;">
+            <div style="font-family: 'Bangers', cursive; color: var(--pink); font-size: 1.2rem;">Taxes</div>
+            <div style="font-size: 1.8rem; margin-top: 10px; text-shadow: 0 0 14px rgba(255,62,200,.35);">lol</div>
           </div>
-          <div class="tokenomic-item">
-            <div class="label">Liquidity</div>
-            <div class="value">Locked 🔒</div>
+          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; text-align: center; min-width: 200px;">
+            <div style="font-family: 'Bangers', cursive; color: var(--pink); font-size: 1.2rem;">Utilities</div>
+            <div style="font-size: 1.8rem; margin-top: 10px; text-shadow: 0 0 14px rgba(255,62,200,.35);">rituels, pump</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ROADMAP -->
-    <section aria-labelledby="roadmap-title">
+    <section>
       <div class="container">
-        <h2 id="roadmap-title" class="section-title glow">Roadmap Ésotérique 🔮</h2>
-        <div class="roadmap">
-          <div class="phase">
-            <h4>Phase I: L'Appel</h4>
-            <p>Lancement du token, création du culte, premiers degens initiés.</p>
+        <h2 class="section-title">Roadmap mème mystique 🗺️🔮</h2>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;">
+          <div style="background: linear-gradient(135deg, rgba(155,52,239,.15), rgba(255,62,200,.12)); border-radius: 14px; padding: 20px; min-width: 200px; text-align: center;">
+            <h3 style="color: var(--blue); font-family: 'Bangers', cursive;">Phase 1 : Invocation 😈</h3>
+            <p>Rituels de lancement • Création du culte</p>
           </div>
-          <div class="phase">
-            <h4>Phase II: La Vision</h4>
-            <p>NFT mystiques, rituels communautaires, partenariats avec d'autres cultes.</p>
+          <div style="background: linear-gradient(135deg, rgba(155,52,239,.15), rgba(255,62,200,.12)); border-radius: 14px; padding: 20px; min-width: 200px; text-align: center;">
+            <h3 style="color: var(--blue); font-family: 'Bangers', cursive;">Phase 2 : Pump 🚀</h3>
+            <p>100x • 1000x • Moon mission</p>
           </div>
-          <div class="phase">
-            <h4>Phase III: L'Ascension</h4>
-            <p>Intégration cross-chain, oracle divin, 1000x ou rien.</p>
-          </div>
-          <div class="phase">
-            <h4>Phase IV: L'Éveil</h4>
-            <p>DivinaCrack devient religion officielle de la Terre. WAGMI.</p>
+          <div style="background: linear-gradient(135deg, rgba(155,52,239,.15), rgba(255,62,200,.12)); border-radius: 14px; padding: 20px; min-width: 200px; text-align: center;">
+            <h3 style="color: var(--blue); font-family: 'Bangers', cursive;">Phase 4 : Lambo sur la lune 🌕🚗</h3>
+            <p>Full Lambo fleet • Moon base</p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- COMMUNITY -->
-    <section aria-labelledby="community-title">
-      <div class="container">
-        <h2 id="community-title" class="section-title glow">Rejoins le Culte 👁️</h2>
-        <div class="card">
-          <h3>Discord Secret</h3>
-          <p>Seuls les initiés connaissent le lien. Whisper "WAGMI" à un oracle.</p>
-          <div class="community-links">
-            <a href="https://twitter.com/CrackDivina" target="_blank" rel="noopener" class="social">𝕏</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Sigil Page -->
-  <main class="page-section" id="sigil-page">
-    <section class="hero" aria-labelledby="sigil-title">
-      <div class="container">
-        <h1 id="sigil-title" class="title glow">Le Sigil Mystique 🔮</h1>
-        <p class="subtitle">Seuls les élus peuvent invoquer le token sacré. Entrez votre mantra.</p>
-
-        <div class="sigil-container">
-          <div class="sigil pulse" aria-hidden="true"></div>
-        </div>
-
-        <div class="countdown" id="countdown">Invocation dans: 00:00:00</div>
-
-        <div class="form">
-          <h2>Invocation Secrète</h2>
-          <p>Whisper your crypto mantra to awaken the sigil.</p>
-          <input type="text" id="mantraInput" placeholder="ex: WAGMI1000x" aria-label="Entrez votre mantra">
-          <button id="invokeBtn">Invoquer le Sigil</button>
-          <div id="invocationMsg" aria-live="polite"></div>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <div class="container">
-        <p>© 2025 DivinaCrack Cult • Not financial advice • 100% degen, 0% sleep</p>
-        <p aria-label="Avertissement">Ce token n’a aucune valeur intrinsèque. Vous pourriez tout perdre. C’est ça la magie. ✨</p>
-      </div>
-    </footer>
   </main>
 
   <footer>
     <div class="container">
-      <p>© 2025 DivinaCrack Cult • Not financial advice • 100% degen, 0% sleep</p>
-      <p aria-label="Avertissement">Ce token n’a aucune valeur intrinsèque. Vous pourriez tout perdre. C’est ça la magie. ✨</p>
+      <p><strong>Not financial advice, only divine chaos.</strong></p>
+      <p>Copyright 2025 DivinaCrack</p>
     </div>
   </footer>
 
-  <!-- Reduced motion toggle -->
   <div class="reduced-motion-toggle">
-    <button class="reduced-motion-btn" aria-label="Toggle reduced motion" id="motionToggle">♿</button>
+    <button class="reduced-motion-btn" id="toggleMotion">🌀</button>
   </div>
 
   <script>
-    // Page navigation
-    document.querySelectorAll('[data-page]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetPage = link.dataset.page;
-        
-        // Update active page
-        document.querySelectorAll('.page-section').forEach(page => {
-          page.classList.remove('active');
-        });
-        document.getElementById(targetPage + '-page').classList.add('active');
-        
-        // Update nav links
-        document.querySelectorAll('.nav-link').forEach(nav => {
-          nav.classList.remove('active');
-        });
-        document.querySelector(`.nav-link[data-page="${targetPage}"]`).classList.add('active');
-        
-        // Scroll to top
-        window.scrollTo(0, 0);
-      });
-    });
-
     // Reduced motion toggle
-    const motionToggle = document.getElementById('motionToggle');
-    let reducedMotion = false;
-    
-    const applyReducedMotion = () => {
-      if (reducedMotion) {
-        document.body.classList.add('reduced-motion');
-      } else {
-        document.body.classList.remove('reduced-motion');
-      }
-    };
-
-    motionToggle.addEventListener('click', () => {
-      reducedMotion = !reducedMotion;
-      applyReducedMotion();
-    });
-
-    // Countdown timer
-    const countdownEl = document.getElementById('countdown');
-    if (countdownEl) {
-      const endTime = new Date();
-      endTime.setMinutes(endTime.getMinutes() + 10);
-
-      const updateCountdown = () => {
-        const now = new Date();
-        const diff = endTime - now;
-        if (diff <= 0) {
-          countdownEl.textContent = "Invocation prête ! 🔥";
-          return;
-        }
-        const mins = Math.floor(diff / 60000);
-        const secs = Math.floor((diff % 60000) / 1000);
-        countdownEl.textContent = `Invocation dans: ${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-      };
+    document.getElementById('toggleMotion').addEventListener('click', function() {
+      document.body.classList.toggle('reduced-motion');
       
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
+      if (document.body.classList.contains('reduced-motion')) {
+        this.innerHTML = '⚡';
+      } else {
+        this.innerHTML = '🌀';
+      }
+    });
+
+    // Check system preference on load
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.body.classList.add('reduced-motion');
+      document.getElementById('toggleMotion').innerHTML = '⚡';
     }
 
-    // Sigil form handling
-    const invokeBtn = document.getElementById('invokeBtn');
-    const mantraInput = document.getElementById('mantraInput');
-    const invocationMsg = document.getElementById('invocationMsg');
-    
-    if (invokeBtn) {
-      invokeBtn.addEventListener('click', () => {
-        const mantra = mantraInput.value.trim();
-        if (!mantra) {
-          invocationMsg.textContent = "Le mantra ne peut pas être vide !";
-          invocationMsg.style.color = "#ff3ec8";
-          return;
+    // Simple button interactions
+    document.querySelectorAll('.btn').forEach(button => {
+      button.addEventListener('click', function() {
+        if (this.classList.contains('btn-buy')) {
+          alert('🚀 BUYING DIVINACRACK... PUMP INITIATED! 🚀\n\nWAGMI! LFG! 1000x incoming! 😈');
+        } else {
+          alert('🔥 JOINING THE CULT... ILLUMINATION PROCESS STARTED! 🔥\n\nWelcome to the Illuminati Degen Council! 🙏');
         }
-        invocationMsg.textContent = "✨ Sigil invoqué ! Check ton wallet...";
-        invocationMsg.style.color = "#ffd166";
-        mantraInput.value = '';
       });
-    }
-
-      <!-- Meme sticker interactions -->
-<script>
-  document.querySelectorAll('.meme-sticker').forEach(sticker => {
-    sticker.addEventListener('click', () => {
-      // Redirection directe vers ton compte X/Twitter
-      window.location.href = "https://x.com/CrackDivina";
     });
-  });
-
-  // Social link handling - Twitter uniquement
-  document.querySelectorAll('.social').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.stopPropagation();
-      // Redirection vers ton Twitter
-      window.location.href = "https://x.com/CrackDivina";
-    });
-  });
-</script>
+  </script>
 </body>
 </html>
 
-
-
+            
